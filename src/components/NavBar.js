@@ -4,7 +4,7 @@ import {useDispatch,useSelector} from 'react-redux';
 
 export const Navbar =({filter,setFiltering})=>{
 
-const items = useSelector(state => state.items)
+   const items = useSelector(state => state.items)
 
     return(
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -42,7 +42,7 @@ const items = useSelector(state => state.items)
            <Link to ="/cart">
            <i class="fas fa-shopping-bag fa-2x grey"></i>
            </Link>
-           <span class="badge badge-success"> {items.length > 0 && items.length } </span>
+           <span class="badge badge-success"> {items.length ? items.length : 0  } </span>
             </div>
           </div>
         </div>

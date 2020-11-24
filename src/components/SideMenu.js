@@ -6,7 +6,7 @@ export const SideMenu = ({loadCategory,category}) => {
     // A chaque fois qu'on clique sur un élément on pourra lire son index
    
     return (
-        <div className= "col-sm-2 sidebar">
+        <div className= "col-sm-12 col-md-2  sidebar">
         <ul>
         {
             links.map((link,index)=>{

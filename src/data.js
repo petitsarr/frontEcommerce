@@ -1,4 +1,4 @@
-// Mes tableau d'objets de fruit,légume,fresh,epicerie,boisson.
+// Mes tableau d'objets de fruit,légume,fresh,épicerie,boisson.
 const fruits = [
     {
       ref: "fruits_1",
@@ -319,6 +319,6 @@ const fruits = [
     }
   ];
   
-  export const list = [fruits,legumes,fresh,epicerie,boissons]
+  export const list = [fruits,legumes,fresh,epicerie,boissons];
 
   

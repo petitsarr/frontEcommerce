@@ -1,9 +1,9 @@
-import React from 'react'
-import {Modal} from './Modal'
+import React from 'react';
+import {Modal} from './Modal';
 
 export const Card = ({item,count}) => {
     return (
-        <div className="col-sm-4">
+        <div className="col-sm-12 col-md-5 col-lg-4  " >
         <div className="card">
           <img
             width="170"
