@@ -1,12 +1,16 @@
 import React,{Fragment,useState,useEffect} from 'react';
-import {useDispatch,useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {Table} from './Table';
+
+
 
 export const Cart = () => {
   const items = useSelector(state => state.items);
   const [Subtotal,setSubtotal] = useState(0.00);
   const [total,setTotal] = useState(0.00);
 const shipping = 10.00 ;
+
+
 
 useEffect(()=>{  
   // totals est un tableau d'entiers qui contient le total de chaque ligne.
@@ -19,6 +23,8 @@ useEffect(()=>{
   console.log(`le total de chaque ligne est  ${totals}`)
   console.log(`Le sous total est egale à ${sousTotal}`)
 },[items,Subtotal,total])
+
+
 
     return (
       <Fragment>
@@ -50,7 +56,7 @@ useEffect(()=>{
               <li className="list-group-item ">
                 <ul className="list-group flex">
                   <li className="text-left">Total</li>
-                  <li className="text-right">€{Subtotal == 0 ? 0.00 : total.toFixed(2)}</li>
+                  <li className="text-right">€{Subtotal === 0 ? 0.00 : total.toFixed(2)}</li>
                 </ul>
               </li>
             </ul>

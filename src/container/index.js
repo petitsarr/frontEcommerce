@@ -3,8 +3,8 @@
 //je vais lire les données de mon store via ce composant container que je vais crée et les rendre accessible à mon composant App
 
 import {connect} from 'react-redux';
-import {updateCart,} from '../action/action'
-import App from '../App'
+import {saveCart} from '../action/action'
+import App from '../App';
 
 // mon composant container
  export const AppContainer = connect(
@@ -17,10 +17,10 @@ import App from '../App'
     //Passé à notre composant de type présentation sous forme de props toutes les fonctions dispatch.
     function mapDispatchToProps (dispatch){
         return{
-           
-            onUpdateCart : (item,quantity) => dispatch(updateCart(item,quantity))
+            saveLocalStorage : (items) => dispatch(saveCart(items))
+          
         }
     }
 )(App)
 
-// Donc c'est notre AppContainer qui va generer notre composant de presentation App.
+// Donc c'est notre AppContainer qui va generer notre composant de type presentation App....

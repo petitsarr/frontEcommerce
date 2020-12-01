@@ -6,11 +6,11 @@ import {Navbar}from './components/NavBar';
 import {Home} from './Home';
 
 // Mes données
-import {list} from './data'
+import {list} from './data';
 
-const  App=(props)=> {
+const  App = (props) => {
 
-  const {items, onUpdateCart} = props
+  const {items,saveLocalStorage} = props ;
 
   const [category,setCategory] = useState(0);
 
@@ -18,7 +18,7 @@ const  App=(props)=> {
   // true filtré : on renvoie les categories filtré en fonction de la recherche
   const [isFiltering,setFiltering] = useState(false)
 
-  // filtered recoit les categories filtrés...
+  // filtered qui est un tableau vide recoit les categories filtrés..
   const [filtered,setFiltered] = useState([])
 
   const [count,setCount]  =  useState(0);
@@ -31,7 +31,7 @@ const  App=(props)=> {
 }
 
 
-    // Cette fonction permet de filter les resultats en fonction de la recherche,elle recoit en parametre le texte saisi dans l'input.
+ // Cette fonction permet de filter les resultats en fonction de la recherche,elle recoit en paramétre le texte saisi dans l'input.
   const filterResults =(input)=>{
    // La méthode flat() qui crée un nouveau tableau avec tous les éléments
   // des sous-tableaux concaténés de manière récursive jusqu'à une profondeur spécifiée.
@@ -56,21 +56,16 @@ const  App=(props)=> {
   }
 
      useEffect(()=>{
-          console.log(isFiltering)
-       })
+          console.log("Changement dans mes items ")
+          saveLocalStorage(items)
+       },[items])
 
 
-
-
-
-
-
-
-
-      return (
+      return ( 
       <Fragment>
         <Router>
-          <Navbar filter= {filterResults} setFiltering={setFiltering} count={count} />
+          <Navbar filter= {filterResults} setFiltering={setFiltering} count={count}/>
+
            {/*Les routes*/}
           <Route exact path="/" component={props => <Home 
                                                 category={category}

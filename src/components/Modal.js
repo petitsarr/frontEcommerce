@@ -5,10 +5,11 @@ import {addtoCart} from '../action/action';
 export const Modal = ({ item  }) => {
   const [qty, setQty] = useState(1);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  
   // Dispatch de mon action ajouter au cart.
 const add =(item,quantity) => {
-  dispatch(addtoCart(item,quantity))
+ return dispatch(addtoCart(item,quantity))
 }
 
   return (
@@ -51,8 +52,16 @@ const add =(item,quantity) => {
                 <p class="lead">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore
                 </p>
-                  <h3 className="price">€{item.price}/{item.unit}</h3> <br />
+                  <h3 className="price">€{item.price}/{item.unit}</h3><br />
                 <div
                   className="btn-group"
                   role="group"

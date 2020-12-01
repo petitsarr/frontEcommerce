@@ -1,23 +1,28 @@
 import {actions} from '../action/action';
 
-// Mon etat initial....
 
+// On va setter une valeur pour une clé
+const saveToLocalStorage = object=>{
+    localStorage.setItem("items",JSON.stringify(object))
+}
+
+// Mon etat initial....
 const initialState = {
-    items: []
+    items: JSON.parse(localStorage.getItem("items")) !== null ?  JSON.parse(localStorage.getItem("items")) : [] 
 }
 
 export const onlineStoreApp = (state=initialState,action)=>{
 
   switch (action.type) {
 
-
+    
         case actions.ADD_TO_CART: 
           
             return{
             items : [
                 ...state.items,
                action.payload
-            ]
+            ]    
         }
             
 
@@ -38,15 +43,16 @@ export const onlineStoreApp = (state=initialState,action)=>{
             }
 
 
-        case actions.REMOVE_FROM_CART:
+        case actions.REMOVE_FROM_CART :
                     return {
                         items:state.items.filter(item=>{
 
-                        return item.id != action.payload 
+                        return item.id !== action.payload 
                     })
                 }
 
         case actions.SAVE_CART :
+            saveToLocalStorage(action.payload.items)
             return state
     
         default:

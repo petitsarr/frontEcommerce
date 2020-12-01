@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react';
-import {useDispatch,useSelector} from 'react-redux';
-import {updateCart,removeFromCart} from '../action/action'
+import {useDispatch} from 'react-redux';
+import {updateCart,removeFromCart} from '../action/action';
+
 export const Row = ( props ) => {
 
  const {id,details,quantity} = props.item
@@ -9,17 +10,25 @@ export const Row = ( props ) => {
  const dispatch = useDispatch();
 
  const update = (action) =>{
-   if (action==='increment'){setQty(qty + 1)}
-   if (action==='decrement'){setQty(qty - 1)}
+   if (action==='increment'){
+     setQty(qty + 1)
+    }
+   if (action==='decrement'){
+     setQty( qty===0 ? qty : qty - 1 )
+    }
 
  }
-  
- const remove= (id)=>{
+ 
+ 
+ const remove=(id)=>{
    dispatch(removeFromCart(id))
  }
+ 
+
  useEffect(()=>{
   dispatch(updateCart(id,qty))
  },[qty])
+
 
     return (
       <tr>
