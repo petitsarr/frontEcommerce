@@ -54,8 +54,16 @@ export const onlineStoreApp = (state=initialState,action)=>{
         case actions.SAVE_CART :
             saveToLocalStorage(action.payload.items)
             return state
-    
+
+            case actions.RESET_CART : 
+            saveToLocalStorage([])
+            return {
+                items: [ ]
+            
+        }
+
+      
         default:
-           return state;
+          return state
     }
 }

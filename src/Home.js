@@ -1,5 +1,6 @@
 import React from 'react';
 import {SideMenu} from './components/SideMenu';
+import { Footer } from './components/Footer'
 import {List} from './components/List';
 
 export const Home = ({category,isFiltering,loadCategory,filtered,list,updateCart}) => {
@@ -16,6 +17,7 @@ export const Home = ({category,isFiltering,loadCategory,filtered,list,updateCart
         </div>
      </div>
      </div>
+     <Footer/>
 </div>
     )
 }

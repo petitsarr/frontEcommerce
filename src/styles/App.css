@@ -137,6 +137,10 @@ body {
   }
   .checkout {
     margin-top: 5px;
+    color: white!important;
+  }
+  .disabled{
+opacity: 0.65; ;
   }
   .coupon {
     color: green;
@@ -192,8 +196,10 @@ body {
      /* position: fixed; */
      top: 0;
      left: 0;
-     
-    
-  
 }
-
+.mylien{
+  color: red;
+}
+.mylien:hover{
+color: red;
+}

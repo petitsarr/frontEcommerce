@@ -1,6 +1,8 @@
 import React,{Fragment,useState,useEffect} from 'react';
 import {useSelector} from 'react-redux';
+import {Link} from 'react-router-dom'
 import {Table} from './Table';
+import { Footer } from './Footer';
 
 
 
@@ -17,7 +19,7 @@ useEffect(()=>{
   const totals = items.map(item=>{
     return item.quantity * item.details.price
   })
-  const sousTotal = totals.reduce((item1,item2) => item1 + item2, 0)
+  const sousTotal = totals.reduce((item1,item2) => item1 + item2, 0);
   setSubtotal(sousTotal);
   setTotal(Subtotal + shipping)
   console.log(`le total de chaque ligne est  ${totals}`)
@@ -60,18 +62,16 @@ useEffect(()=>{
                 </ul>
               </li>
             </ul>
-            <button
-              type="button"
-              className="btn btn-light btn-lg btn-block checkout bg-crimson"
-              disabled="true"
-            >
-              <a href="#" className="white">
+          
+             <Link to= "/checkout" className={` white btn btn-light btn-lg btn-block checkout ${!items.length && 'disabled'} bg-crimson`}>
                 checkout
-              </a>
-            </button>
+                </Link>
+            
+            
           </div>
         </div>
         </div>
+        <Footer/>
       </Fragment>
     );
 }

@@ -8,7 +8,9 @@ UPDATE_CART : " UPDATE_CART",
 // l'action supprime
 REMOVE_FROM_CART : "REMOVE_FROM_CART",
 // on va sauvg arder les items dans le local storage..
-SAVE_CART : "SAVE_CART"
+SAVE_CART : "SAVE_CART",
+// Réinitialisation au nivau de notre carte
+RESET_CART : "RESET_CART"
 }
 
 
@@ -59,5 +61,11 @@ export const saveCart =(items)=>{
      payload:{
          items: items
     }
+    }
+}  
+
+export const resetCart =()=>{
+    return{
+     type: actions.RESET_CART
     }
 }  
