@@ -1,14 +1,14 @@
 import React,{Fragment,useState,useEffect,useContext} from 'react';
 import { Link } from "react-router-dom";
-import {UserProfileContext} from  "./UserProfileContext" ;
+import {UserProfileContext} from  "./UserProfileContext";
 import {Footer} from './Footer' ;
-import '../styles/App.css'
+import '../styles/App.css' ;
 
 export const Checkout = () => {
     const [isValid,setValid] = useState(false);
 
 const value = useContext(UserProfileContext);
-// on recupére tous les attributs qui sont stockés dans ce value
+// on recupére tous les attributs qui sont stockés dans ce value;
 const {
 firstName,
   lastName,
